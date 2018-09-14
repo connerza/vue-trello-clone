@@ -53,6 +53,9 @@ export default {
     team: function () {
       return this.$store.state.teams[this.teamId];
     }
+  },
+  mounted: function () {
+    this.$store.dispatch('getBoardsByTeamId', this.teamId);
   }
 }
 </script>

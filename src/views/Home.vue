@@ -7,7 +7,10 @@
         Your Teams
       </h2>
       <br>
-      <BoardList :team-id="1" />
+      <BoardList 
+        v-for="team in teams"
+        :key="team.id"
+        :team-id="team.id" />
       <br>
       <v-btn>New Team <v-icon right>add</v-icon></v-btn>
     </v-container>
@@ -16,10 +19,20 @@
 
 <script>
 import BoardList from "@/components/BoardList";
+import { mapGetters } from "vuex";
+
 export default {
   name: 'Home',
   components: {
-    BoardList
+    BoardList,
+  },
+  computed: {
+    ...mapGetters({
+      teams: 'allTeams'
+    }),
+  },
+  mounted: function () {
+    this.$store.dispatch('getAllTeams');
   }
 }
 </script>

@@ -25,7 +25,6 @@ const state = {
         id,
         name,
         description,
-        bgColor,
         lists
       }
     */
