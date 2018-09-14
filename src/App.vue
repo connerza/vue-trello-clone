@@ -3,7 +3,7 @@
     <Drawer />
     <v-toolbar app />
     <v-content>
-      <HelloWorld/>
+      <router-view />
     </v-content>
     <v-footer 
       fixed 
@@ -14,13 +14,11 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
 import Drawer from "./components/Drawer";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     Drawer
   }
 }

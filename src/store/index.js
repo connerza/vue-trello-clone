@@ -15,7 +15,7 @@ const state = {
         description,
         profileImage,
         members,
-        boardIds
+        boards
       }
     */
   },
@@ -23,8 +23,10 @@ const state = {
     /*
       id: {
         id,
-        teamId,
-        listIds
+        name,
+        description,
+        bgColor,
+        lists
       }
     */
   },
@@ -32,9 +34,8 @@ const state = {
     /*
       id: {
         id,
-        boardId,
-        teamId,
-        taskIds,
+        name,
+        tasks
       }
     */
   },
@@ -42,9 +43,6 @@ const state = {
     /*
       id: {
         id,
-        listId,
-        boardId,
-        teamId,
         title,
         description,
         asignee,
