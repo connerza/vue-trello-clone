@@ -19,3 +19,38 @@ npm run build
 ```
 npm run lint
 ```
+
+## Data Models
+```
+team = {
+  id: "",
+  name: "",
+  description: "",
+  image: "",
+  members: [],
+  boards: []
+};
+
+board = {
+  id: "",
+  teamId: "",
+  lists: []
+}
+
+list = {
+  id: "",
+  boardId: "",
+  tasks: []
+}
+
+task = {
+  id: "",
+  listId: "",
+  title: "",
+  description: "",
+  asignee: "",
+  created: date,
+  due: date,
+  comments: ""
+}
+```
