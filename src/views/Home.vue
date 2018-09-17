@@ -32,7 +32,9 @@ export default {
     }),
   },
   mounted: function () {
-    this.$store.dispatch('getAllTeams');
+    this.$store.dispatch('getAllTeams').then(() => {
+      this.$store.dispatch('getAllBoards');
+    });
   }
 }
 </script>

@@ -34,38 +34,73 @@
       dense>
       <v-divider />
       <router-link 
-        v-for="(item, i) in items"
-        :key="i"
-        :to="item.link">
+        to="/home">
         <v-list-tile value="true">
           <v-list-tile-action>
-            <v-icon v-html="item.icon"/>
+            <v-icon v-html="'home'"/>
           </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>Home</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </router-link>
+      <v-list-group
+        v-for="item in items"
+        v-model="item.active"
+        :key="item.text"
+        :prepend-icon="item.icon"
+        no-action>
+        <v-list-tile slot="activator">
           <v-list-tile-content>
             <v-list-tile-title>{{ item.text }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-      </router-link>
+        <router-link
+          v-for="subItem in item.subitems"
+          :key="subItem.text"
+          :to="subItem.link"
+          no-action>
+          <v-list-tile>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ subItem.text }}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </router-link>
+      </v-list-group>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
   export default {
     name: 'Drawer',
     data () {
       return {
-        items: [
-          {
-            icon: 'home',
-            text: 'Home',
-            link: '/'
-          },
-        ],
         menuMini: true,
         title: 'Vuello'
       }
-    }
+    },
+    computed: {
+      ...mapGetters({
+        teams: 'allTeams',
+      }),
+      items: function () {
+        return [
+          {
+            icon: 'people',
+            text: 'Teams',
+            link: '',
+            subitems: this.teams.map(team => {
+              return {
+                text: team.name,
+                link: '/teams/' + encodeURIComponent(team.name)
+              }
+            })
+          }
+        ]
+      }
+    },
   }
 </script>
 

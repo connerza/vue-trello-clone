@@ -16,8 +16,8 @@
         <v-card-title 
           primary-title 
           class="d-block">
-          <div class="headline">Some cool board</div>
-          <div>Board description</div>
+          <div class="headline">{{ board.name }}</div>
+          <div>{{ board.description }}</div>
         </v-card-title>
       </v-card>
     </v-flex>
@@ -48,14 +48,11 @@ export default {
   },
   computed: {
     boards: function () {
-      return this.$store.getters.boardsByTeamId(this.teamId);
+      return this.$store.getters.boardsByTeamId(this.teamId) 
     },
     team: function () {
       return this.$store.state.teams[this.teamId];
     }
   },
-  mounted: function () {
-    this.$store.dispatch('getBoardsByTeamId', this.teamId);
-  }
 }
 </script>

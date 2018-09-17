@@ -3,7 +3,7 @@ import { boards, teams } from "./mock-data";
 const latency = 11;
 
 function asyncify(data) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve(data);
     }, latency);
@@ -18,8 +18,9 @@ export const getBoardsByTeamId = function (teamId) {
       return acc;
     }
   }, []);
-
   return asyncify(teamBoards);
 };
+
+export const getAllBoards = () => asyncify(boards);
 
 export const getTeams = () => asyncify(teams);
