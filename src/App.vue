@@ -20,6 +20,12 @@ export default {
   name: 'App',
   components: {
     Drawer
+  },
+  mounted: function () {
+    // This will be removed. Just here while developing
+    this.$store.dispatch('getAllTeams')
+    this.$store.dispatch('getAllBoards')
+    this.$store.dispatch('getAllLists')
   }
 }
 </script>

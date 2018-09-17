@@ -31,10 +31,5 @@ export default {
       teams: 'allTeams'
     }),
   },
-  mounted: function () {
-    this.$store.dispatch('getAllTeams').then(() => {
-      this.$store.dispatch('getAllBoards');
-    });
-  }
 }
 </script>

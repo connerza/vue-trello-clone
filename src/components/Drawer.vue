@@ -34,7 +34,7 @@
       dense>
       <v-divider />
       <router-link 
-        to="/home">
+        to="/">
         <v-list-tile value="true">
           <v-list-tile-action>
             <v-icon v-html="'home'"/>

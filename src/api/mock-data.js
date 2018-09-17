@@ -43,3 +43,26 @@ export const boards = {
     lists: [6]
   },
 };
+
+export const lists = {
+  1: {
+    id: 1,
+    name: 'Backlog',
+    tasks: [1,2,3]
+  },
+  2: {
+    id: 2,
+    name: 'Doing',
+    tasks: [4,5]
+  },
+  3: {
+    id: 3,
+    name: 'Done',
+    tasks: [6]
+  },
+  4: {
+    id: 4,
+    name: 'Backlog',
+    tasks: [1,2,3]
+  }
+};

@@ -1,4 +1,4 @@
-import { boards, teams } from "./mock-data";
+import { boards, teams, lists } from "./mock-data";
 
 const latency = 11;
 
@@ -20,7 +20,6 @@ export const getBoardsByTeamId = function (teamId) {
   }, []);
   return asyncify(teamBoards);
 };
-
 export const getAllBoards = () => asyncify(boards);
-
 export const getTeams = () => asyncify(teams);
+export const getAllLists = () => asyncify(lists);

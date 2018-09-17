@@ -29,3 +29,13 @@ export function getAllBoards({ commit, getters }) {
     })
   } else { return Promise.resolve() }
 }
+
+export function getAllLists({ commit, state }) {
+  if (Object.values(state.lists).length <= 0) {
+    return api.getAllLists().then(lists => {
+      commit('receiveAllLists', {
+        lists
+      });
+    })
+  } else { return Promise.resolve(); }
+}
