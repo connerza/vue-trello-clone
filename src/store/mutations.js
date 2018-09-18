@@ -9,3 +9,7 @@ export function receiveTeams(state, payload) {
 export function receiveAllLists(state, payload) {
   state.lists = {...state.lists, ...payload.lists}
 }
+
+export function receiveAllTasks(state, payload) {
+  state.tasks = {...state.tasks, ...payload.tasks}
+}

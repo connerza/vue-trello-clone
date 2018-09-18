@@ -39,3 +39,13 @@ export function getAllLists({ commit, state }) {
     })
   } else { return Promise.resolve(); }
 }
+
+export function getAllTasks({ commit, state }) {
+  if (Object.values(state.tasks).length <= 0) {
+    return api.getAllTasks().then(tasks => {
+      commit('receiveAllTasks', {
+        tasks
+      });
+    })
+  } else { return Promise.resolve(); }
+}

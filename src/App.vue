@@ -26,6 +26,7 @@ export default {
     this.$store.dispatch('getAllTeams')
     this.$store.dispatch('getAllBoards')
     this.$store.dispatch('getAllLists')
+    this.$store.dispatch('getAllTasks')
   }
 }
 </script>

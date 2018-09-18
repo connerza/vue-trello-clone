@@ -42,7 +42,7 @@ const state = {
     /*
       id: {
         id,
-        title,
+        name,
         description,
         asignee,
         created,

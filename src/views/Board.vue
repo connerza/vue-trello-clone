@@ -1,21 +1,31 @@
 <template>
-  <v-container fluid>
-    <h2 class="display-2">{{ board ? board.name : '' }}</h2>
-    <div 
-      fill-height
-      class="list-container">
-      <v-layout row>
-        <h2 
-          v-for="l in boardLists(board)"
-          :key="l.id">{{ l.name }}</h2>
-      </v-layout>
-    </div>
+  <v-container 
+    fluid
+    grid-list-xl>
+    <v-layout row>
+      <v-flex xs12>
+        <h2 class="display-2">{{ board ? board.name : '' }}</h2>
+      </v-flex>
+    </v-layout>
+    <v-layout 
+      class="scroll-x" 
+      row>
+      <List 
+        v-for="l in boardLists(board)"
+        :list="l"
+        :tasks="listTasks(l)"
+        :key="l.id" />
+    </v-layout>
   </v-container>
 </template>
 
 <script>
+import List from "../components/List.vue";
 export default {
   name: 'Board',
+  components: {
+    List
+  },
   computed: {
     board: function () {
       return this.$store.state.boards[this.$route.params.id]
@@ -39,7 +49,12 @@ export default {
 </script>
 
 <style scoped>
-  .list-container {
+  .scroll-x {
     overflow-x: scroll;
+    display: flex;
+  }
+
+  .scroll-x > * {
+    flex-shrink: 0;
   }
 </style>
