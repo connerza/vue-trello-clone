@@ -109,9 +109,4 @@
     max-height: 60%;
     width: auto;
   }
-
-  a {
-    text-decoration: none;
-    color: unset;
-  }
 </style>

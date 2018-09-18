@@ -12,14 +12,16 @@
       sm6 
       md4 
       lg3>
-      <v-card hover>
-        <v-card-title 
-          primary-title 
-          class="d-block">
-          <div class="headline">{{ board.name }}</div>
-          <div>{{ board.description }}</div>
-        </v-card-title>
-      </v-card>
+      <router-link :to="'/board/' + board.id">
+        <v-card hover>
+          <v-card-title 
+            primary-title 
+            class="d-block">
+            <div class="headline">{{ board.name }}</div>
+            <div>{{ board.description }}</div>
+          </v-card-title>
+        </v-card>
+      </router-link>
     </v-flex>
     <v-flex
       xs12 

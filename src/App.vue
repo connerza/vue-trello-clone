@@ -30,3 +30,10 @@ export default {
   }
 }
 </script>
+
+<style>
+  a {
+    text-decoration: none;
+    color: unset;
+  }
+</style>
