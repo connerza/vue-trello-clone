@@ -49,3 +49,20 @@ export function getAllTasks({ commit, state }) {
     })
   } else { return Promise.resolve(); }
 }
+
+export function updateTaskList({ commit }, payload) {  
+  commit('updateTask', {
+    task: payload.updatedTask
+  });
+  if (payload.oldListId !== payload.newListId) {
+    commit('removeTaskFromList', {
+      listId: payload.oldListId,
+      taskId: payload.updatedTask.id
+    });
+
+    commit('addTaskToList', {
+      listId: payload.newListId,
+      taskId: payload.updatedTask.id
+    });
+  }
+}

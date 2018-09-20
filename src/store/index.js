@@ -44,7 +44,7 @@ const state = {
         id,
         name,
         description,
-        asignee,
+        assignee,
         created,
         due,
         comments

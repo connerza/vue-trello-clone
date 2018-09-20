@@ -14,17 +14,34 @@
         v-for="l in boardLists(board)"
         :list="l"
         :tasks="listTasks(l)"
-        :key="l.id" />
+        :key="l.id"
+        @task-click="taskClick(l.id, $event)" />
     </v-layout>
+    <task-modal 
+      v-if="modalOpen"
+      :modal-task-id="modalTaskId"
+      :board-lists="boardLists(board)"
+      :curr-list-id="modalListId"
+      @close-modal="modalOpen = false" />
   </v-container>
 </template>
 
 <script>
 import List from "../components/List.vue";
+import TaskModal from "../components/TaskModal.vue";
+
 export default {
   name: 'Board',
+  data: function () {
+    return {
+      modalOpen: false,
+      modalTaskId: -1,
+      modalListId: -1
+    };
+  },
   components: {
-    List
+    List,
+    TaskModal
   },
   computed: {
     board: function () {
@@ -43,6 +60,11 @@ export default {
     },
     listTasks: function(list) {
       return list.tasks.map(t => this.tasks[t])
+    },
+    taskClick: function(listId, taskId) {
+      this.modalTaskId = taskId;
+      this.modalListId = listId;
+      this.modalOpen = true;
     }
   }
 }

@@ -72,7 +72,7 @@ export const tasks = {
     id: 1,
     name: 'Vue Tech Challenge',
     description: 'Release a Vue tech challenge',
-    asignee: 'Zac Conner',
+    assignee: 'Zac Conner',
     created: '',
     due: '',
     comments: ''
@@ -81,7 +81,7 @@ export const tasks = {
     id: 3,
     name: 'Win some work',
     description: 'Get a new web project',
-    asignee: 'Reid Braswell',
+    assignee: 'Reid Braswell',
     created: '',
     due: '',
     comments: ''
@@ -90,7 +90,7 @@ export const tasks = {
     id: 2,
     name: 'Quarterly Meetup',
     description: 'Host a quarterly meetup',
-    asignee: 'Reid Braswell',
+    assignee: 'Reid Braswell',
     created: '',
     due: '',
     comments: ''
@@ -99,7 +99,7 @@ export const tasks = {
     id: 4,
     name: 'Create a CLI',
     description: 'Create a CLI for Web Solutions that we can use to set up our project repos.',
-    asignee: '',
+    assignee: '',
     created: '',
     due: '',
     comments: ''

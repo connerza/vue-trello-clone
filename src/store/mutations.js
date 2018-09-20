@@ -13,3 +13,18 @@ export function receiveAllLists(state, payload) {
 export function receiveAllTasks(state, payload) {
   state.tasks = {...state.tasks, ...payload.tasks}
 }
+
+export function updateTask(state, payload) {
+  state.tasks[payload.task.id] = payload.task
+}
+
+export function removeTaskFromList(state, payload) {
+  state.lists[payload.listId].tasks.splice(
+    state.lists[payload.listId].tasks.indexOf(payload.taskId),
+    1
+  );
+}
+
+export function addTaskToList(state, payload) {
+  state.lists[payload.listId].tasks.push(payload.taskId)
+}
