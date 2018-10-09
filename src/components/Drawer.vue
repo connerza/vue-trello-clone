@@ -94,7 +94,7 @@
             subitems: this.teams.map(team => {
               return {
                 text: team.name,
-                link: '/teams/' + encodeURIComponent(team.name)
+                link: '/team/' + encodeURIComponent(team.name)
               }
             })
           }

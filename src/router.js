@@ -19,6 +19,11 @@ export default new Router({
       path: '/board/:id',
       name: 'board',
       component: () => import(/* webpackChunkName: "board" */ './views/Board.vue')
+    },
+    {
+      path: '/team/:name',
+      name: 'board',
+      component: () => import(/* webpackChunkName: "team" */ './views/Team.vue')
     }
   ]
 })
